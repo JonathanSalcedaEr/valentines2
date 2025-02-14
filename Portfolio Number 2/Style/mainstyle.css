@@ -1,0 +1,206 @@
+body {
+    background-color: rgb(255, 255, 255);
+  }
+  
+  h1 {
+    color: white;
+    text-align: center;
+  }
+  
+  p {
+    font-family: verdana;
+    font-size: 20px;
+  }
+  .navbar{
+    background-color: lightblue;
+  }
+  .text-lg {
+    color: red;
+  }
+  .ml-4{
+    background-color: red;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+  }
+  .btn{
+    background-color: rgb(230, 175, 175);
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    margin-right: 20px;
+    text-decoration: none;
+    pointer-events: auto;
+  }
+  .btn1{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+  }
+  .ml-4:hover {
+    transform: scale(1.1);
+    background-color: darkred;
+    box-shadow: 0px 8px 15px rgba(255, 0, 0, 0.6);
+  }
+  .btn:hover{
+    transform: scale(1.1);
+    background-color: darkred;
+    box-shadow: 0px 8px 15px rgba(255, 0, 0, 0.6);
+    color: white;
+  }
+  .btn1:hover{
+    transform: scale(1.1);
+    background-color: rgb(22, 16, 16);
+    box-shadow: 0px 8px 15px rgba(255, 0, 0, 0.6);
+    color: white;
+  }
+  /* Click Effect: Shrink & Ripple */
+  .ml-4:active {
+    transform: scale(0.9);
+    transition: transform 0.1s;
+}
+
+/* Ripple Effect on Click */
+.ml-4::after {
+    content: "";
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    top: 50%;
+    left: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transition: all 0.4s ease-out;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.ml-4:active::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+}
+
+/* Heart Animation */
+.heart {
+    position: absolute;
+    color: red;
+    font-size: 20px;
+    opacity: 0.8;
+    animation: floatUp 1s linear;
+}
+  .ml-3{
+    background-color: red;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+  }
+  .heart {
+    position: absolute;
+    color: red;
+    font-size: 50px;
+    opacity: 0;
+    animation: fadeHeart 2s infinite ease-in-out;
+}
+@keyframes fadeHeart {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.8); opacity: 0; }
+}
+@keyframes popHeart {
+  0% {
+      transform: scale(0);
+      opacity: 0;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+.heart:nth-child(1) { left: 20%; top: 40%; animation-delay: 0s; }
+.heart:nth-child(2) { left: 50%; top: 20%; animation-delay: 0.5s; }
+.heart:nth-child(3) { left: 80%; top: 50%; animation-delay: 1s; }
+.heart:nth-child(4) { left: 30%; top: 70%; animation-delay: 1.5s; }
+.heart:nth-child(5) { left: 70%; top: 80%; animation-delay: 2s; }
+.ml-6
+{
+  background-color: rgb(34, 31, 31);
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+}
+.d-inline {
+  display: inline-block; /* Ensures it's inline */
+}
+
+.align-text-top {
+  vertical-align: top; /* Aligns it with text at the top */
+}
+
+/* Custom class for more control */
+.brand-logo {
+  width: 300px;
+  height: 400px;
+  border-radius: 15px;
+  border: 2px solid #ff69b4; /* Cute pink border */
+  padding: 5px;
+  background-color: white; /* To make it pop */
+}
+.circular-img {
+  width: 150px; /* Make sure width and height are equal */
+  height: 150px; 
+  border-radius: 50%; /* Makes it a circle */
+  object-fit: cover; /* Ensures the image fills the circle */
+  display: block; /* Helps with alignment */
+}
+
+
+
+.polaroid {
+  display: inline-block;
+  background: white;
+  padding: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.polaroid img {
+  display: block;
+  width: 400;
+  height: 300;
+  border-radius: 5px;
+}
+
+.polaroid p {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+}
+h2{
+  text-decoration: none;
+}

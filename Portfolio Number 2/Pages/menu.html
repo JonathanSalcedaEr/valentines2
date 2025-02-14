@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What food would you like to eat? 🍔</title>
+    <link rel="stylesheet" href="../Style/mainstyle.css">
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff5e6;
+            text-align: center;
+        }
+        h1 {
+            color: #d63384;
+            margin-top: 20px;
+        }
+        h2 {
+            color: #d63384;
+            margin-top: 20px;
+            text-decoration: none;
+            text-transform: none;
+        }
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .menu-item {
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .menu-item:hover {
+            transform: scale(1.05);
+        }
+        .menu-item img {
+            width: 100%;
+            height: 180px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .menu-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #ff5733;
+        }
+        .menu-price {
+            font-size: 16px;
+            color: #28a745;
+            font-weight: bold;
+        }
+        .menu-description {
+            font-size: 14px;
+            color: #555;
+            margin-top: 5px;
+        }
+        .ml-4{
+            background-color: red;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+        }
+        .p1{
+            color: red;
+            text-decoration: none;
+        }
+            </style>
+</head>
+<body>
+
+    <h1>🍔 What food would you like to eat my Wife?🍕</h1>
+    <div class="menu-container">
+        <a href="SaveDate.html?menu=Carbonara">
+            <div class="menu-item">
+                <img src="../Images/carbonara.jpg" alt="Carbonara">
+            </div>
+        </a>
+
+        <a href="SaveDate.html?menu=Alaking">
+            <div class="menu-item">
+                <img src="../Images/alakin.jpg" alt="Alaking">
+            </div>
+        </a>
+        
+        <a href="SaveDate.html?menu=Samgyop">
+            <div class="menu-item">
+                <img src="../Images/sangyop.jpg" alt="Samgyop">
+            </div>
+        </a>
+    </div>
+    <div class="mt-4">
+        <a href="Success.html" class="ml-4 px-4 py-2 border border-blue-500 text-blue-500 rounded-lg hover:bg-blue-500 hover:text-white">Previous</a>
+      </div>
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Date Picker</title>
+    <link rel="stylesheet" href="../Style/mainstyle.css">
+</head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: pink;
+            overflow: hidden;
+        }
+        
+        h2 {
+            margin-top: 20px;
+        }
+
+        input {
+            font-size: 18px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        p {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Heart styles */
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 30px;
+            opacity: 1;
+            transition: opacity 0.10s ease-out;
+        }
+        /* Family Picture Styling */
+        #familyPhoto {
+        display: none;
+        width: 300px;
+        border-radius: 20px;
+        margin-top: 20px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        animation: fadeIn 1s ease-in-out;
+
+        /* Center the image */
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="heart">💜</div>
+    <div class="heart">💗</div>
+    <div class="heart">🩷</div>
+    <div class="heart">💗</div>
+    <div class="heart">💗</div>
+    <h2 class="text-lg text-gray-500">Save the Date❤️</h2>
+    <br>
+    <label for="datePicker">Select a date:</label>
+    <input type="date" id="datePicker">
+    <h2>Selected Menu: <span id="selectedMenu">None</span></h2>
+    <p>Selected Date: <span id="selectedDate">None</span></p>
+    <audio id="loveSong" src="../Images/music1.mp3"></audio>
+
+    
+    <!-- Family Picture -->
+    <img id= "familyPhoto" src="../Images/flower.jpg" alt="Our Family Picture">
+    <script>
+        // Extract menu item from URL parameters
+        const params = new URLSearchParams(window.location.search);
+        const selectedMenu = params.get("menu"); 
+
+        // Display selected menu item
+        if (selectedMenu) {
+            document.getElementById("selectedMenu").textContent = selectedMenu;
+        }
+
+        // Display selected date when user picks one
+        document.getElementById("datePicker").addEventListener("change", function() {
+    document.getElementById("selectedDate").textContent = this.value;
+
+    // Show 10 floating hearts when a date is selected
+    for (let i = 0; i < 10; i++) { 
+        createHeart();
+    }
+    // Show the family photo only after selecting the date
+    document.getElementById("familyPhoto").style.display = "block";
+});
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️"; // Heart icon
+
+    // Random positions
+    const x = Math.random() * window.innerWidth;
+    const y = Math.random() * window.innerHeight;
+
+    // Random size
+    const size = Math.random() * 50 + 20;
+
+    heart.style.left = `${x}px`;
+    heart.style.top = `${y}px`;
+    heart.style.fontSize = `${size}px`;
+    heart.style.position = "absolute";
+
+    document.body.appendChild(heart);
+
+    // Remove the heart after 1.5 seconds
+    setTimeout(() => {
+        heart.style.opacity = "1"; 
+        setTimeout(() => heart.remove(), 500);
+    }, 1000);
+    setTimeout(() => {
+    Swal.fire({
+        title: "Yay! Our date is set! 💖",
+        text: "Can't wait to spend this special day with you! I LOVE YOU",
+        icon: "success",
+        confirmButtonText: "Awww ❤️"
+    });
+}, 1500);
+
+    document.getElementById("familyPhoto").style.display = "block";
+
+    // Play love song
+    document.getElementById("loveSong").play();
+    }
+    </script>
+
+</body>
+</html>
